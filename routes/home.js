@@ -21,9 +21,23 @@ router.post('/home',(req,res)=>{
 var url=req.body.input;
 
 URLs.find({'url':url},(err,obj)=>{
+    /*
     console.log(err)
     console.log(obj[0].id);
-    res.render('F:/codes/projects/url-shortener/routes/test.ejs',{person:obj[0].id})
+    res.render('F:/codes/projects/url-shortener/routes/test.ejs',{
+        url:url,
+        surl:obj[0].id
+
+    })
+    */
+   res.render('F:/codes/projects/url-shortener/routes/test.ejs',{
+   "url":url,
+    "surl":obj[0].id
+   });
+
+//'<a href=<%=url %>'</a>
+
+
 });
 
 })
